@@ -11,6 +11,11 @@ body {
 	background-color: bisque;
 }
 
+button {
+	border: none;
+	cursor: pointer;
+}
+
 .container {
 	padding: 25px;
 	margin: 20px;
@@ -62,7 +67,6 @@ body {
 }
 
 .task-container .delete-button {
-	border: none;
 	background-color: rgb(255, 225, 225);
 	cursor: pointer;
 	padding: 4px;
