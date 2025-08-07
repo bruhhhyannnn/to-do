@@ -103,6 +103,14 @@
 
                 // also remove from local storage
             }
+
+            function addTaskToStorage(taskInputKey, inputValue) {
+                localStorage.setItem(taskInputKey, inputValue);
+            }
+
+            function removeTaskToStorage(taskInputKey) {
+                localStorage.removeItem(taskInputKey);
+            }
         </script>
     </body>
 
