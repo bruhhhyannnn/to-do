@@ -60,11 +60,12 @@
                 }
                 document.getElementById("inputTask").value = "";
 
-                createTaskContainer(inputValue);
-                // and then add data to local storage
+                const taskId = "task-" + generateTimestampId();
+                createTaskContainer(taskId, inputValue);
+                addTaskToStorage(taskId, inputValue);
             }
 
-            function createTaskContainer() {
+            function createTaskContainer(taskId, inputValue) {
                 const taskContainer = document.createElement("div");
                 taskContainer.className = "task-container";
 
@@ -72,18 +73,18 @@
 
                 const taskInput = document.createElement("input");
                 taskInput.type = "checkbox";
-                taskInput.id = "task-id";
+                taskInput.id = taskId;
                 taskInput.name = taskInput.id;
                 const taskLabel = document.createElement("label");
                 taskLabel.htmlFor = taskInput.id;
-                taskLabel.innerText = "input value";
+                taskLabel.innerText = inputValue;
 
                 taskDiv.append(taskInput);
                 taskDiv.append(taskLabel);
 
                 const deleteButton = document.createElement("button");
                 deleteButton.className = "delete-button";
-                deleteButton.onclick = () => deleteTaskContainer();
+                deleteButton.onclick = () => deleteTaskContainer(taskInput.id);
                 const deleteIcon = document.createElement("ion-icon");
                 deleteIcon.className = "delete-icon";
                 deleteIcon.name = "trash-outline";
