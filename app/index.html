@@ -50,7 +50,7 @@
             const inputContainer = document.querySelector(".input-container");
 
             defaultTask.forEach((item, index) => {
-                // add tasks to storage
+                addTaskToStorage("task-" + index, item);
             });
 
             for (let i = 0; i < localStorage.length; i++) {
