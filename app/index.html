@@ -27,7 +27,7 @@
                     <input type="checkbox" id="task-0" name="task-0">
                     <label for="task-0">Sample Checkbox 1</label>
                 </div>
-                <button class="delete-button" onclick="deleteTask()">
+                <button class="delete-button" onclick="deleteTaskContainer()">
                     <ion-icon name="trash-outline" class="delete-icon"></ion-icon>
                 </button>
             </div>
@@ -97,7 +97,11 @@
             }
 
             function deleteTaskContainer() {
-                // deletes UI element 
+                if (!confirm("Are you sure you want to delete this task?")) return;
+                const taskElement = document.getElementById("").parentElement.parentElement;
+                taskElement.remove();
+
+                // also remove from local storage
             }
         </script>
     </body>
