@@ -52,7 +52,14 @@
             });
 
             function addTask() {
-                // get input value and then create task container
+                const inputValue = document.getElementById("inputTask").value;
+                if (inputValue.length == 0) {
+                    alert("Please input a value.");
+                }
+                document.getElementById("inputTask").value = "";
+
+                createTaskContainer(inputValue);
+                // and then add data to local storage
             }
 
             function createTaskContainer() {
