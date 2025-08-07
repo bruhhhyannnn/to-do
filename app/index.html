@@ -46,6 +46,8 @@
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
         <script>
             const defaultTask = ['Sample Checkbox 1', 'Sample Checkbox 2']
+            const container = document.querySelector(".container");
+            const inputContainer = document.querySelector(".input-container");
 
             defaultTask.forEach((item, index) => {
                 // add tasks to storage
@@ -63,7 +65,35 @@
             }
 
             function createTaskContainer() {
-                // creates UI element
+                const taskContainer = document.createElement("div");
+                taskContainer.className = "task-container";
+
+                const taskDiv = document.createElement("div");
+
+                const taskInput = document.createElement("input");
+                taskInput.type = "checkbox";
+                taskInput.id = "task-id";
+                taskInput.name = taskInput.id;
+                const taskLabel = document.createElement("label");
+                taskLabel.htmlFor = taskInput.id;
+                taskLabel.innerText = "input value";
+
+                taskDiv.append(taskInput);
+                taskDiv.append(taskLabel);
+
+                const deleteButton = document.createElement("button");
+                deleteButton.className = "delete-button";
+                deleteButton.onclick = () => deleteTaskContainer();
+                const deleteIcon = document.createElement("ion-icon");
+                deleteIcon.className = "delete-icon";
+                deleteIcon.name = "trash-outline";
+
+                deleteButton.append(deleteIcon);
+
+                taskContainer.append(taskDiv);
+                taskContainer.append(deleteButton);
+
+                container.insertBefore(taskContainer, inputContainer);
             }
 
             function deleteTaskContainer() {
