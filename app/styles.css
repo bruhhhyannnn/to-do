@@ -16,6 +16,19 @@ button {
 	cursor: pointer;
 }
 
+textarea {
+	resize: none;
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-weight: 500;
+}
+
+textarea::placeholder {
+	font-size: 14px;
+	font-weight: 400;
+}
+
 .container {
 	padding: 25px;
 	margin: 20px;
