@@ -97,12 +97,12 @@
                 container.insertBefore(taskContainer, inputContainer);
             }
 
-            function deleteTaskContainer() {
+            function deleteTaskContainer(taskInputId) {
                 if (!confirm("Are you sure you want to delete this task?")) return;
-                const taskElement = document.getElementById("").parentElement.parentElement;
+                const taskElement = document.getElementById(taskInputId).parentElement.parentElement;
                 taskElement.remove();
 
-                // also remove from local storage
+                removeTaskToStorage(taskInputId)
             }
 
             function addTaskToStorage(taskInputKey, inputValue) {
