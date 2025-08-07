@@ -111,6 +111,10 @@
             function removeTaskToStorage(taskInputKey) {
                 localStorage.removeItem(taskInputKey);
             }
+
+            function generateTimestampId() {
+                return Date.now().toString();
+            }
         </script>
     </body>
 
