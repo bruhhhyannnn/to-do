@@ -53,6 +53,13 @@
                 // add tasks to storage
             });
 
+            for (let i = 0; i < localStorage.length; i++) {
+                const keys = localStorage.key(i);
+                if (keys.startsWith("task-")) {
+                    createTaskContainer(keys, localStorage.getItem(keys));
+                }
+            }
+
             function addTask() {
                 const inputValue = document.getElementById("inputTask").value;
                 if (inputValue.length == 0) {
