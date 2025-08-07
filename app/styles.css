@@ -78,3 +78,34 @@ body {
 	font-size: 16px;
 	color: orangered;
 }
+
+.input-container {
+	background-color: cornsilk;
+	padding: 10px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+	gap: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.input-container .button-container {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.input-container .button-container button {
+	background-color: moccasin;
+	padding: 5px;
+	border-radius: 5px;
+	color: chocolate;
+	font-weight: 500;
+}
+
+.input-container .button-container button:hover {
+	background-color: rgba(255, 233, 154, 0.85);
+}
+
+.input-container .button-container button:active {
+	background-color: rgba(255, 233, 154, 0.7);
+}
