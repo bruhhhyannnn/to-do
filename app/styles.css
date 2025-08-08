@@ -96,6 +96,13 @@ textarea::placeholder {
 	color: orangered;
 }
 
+.empty-task {
+	text-align: center;
+	color: darkgreen;
+	font-weight: bold;
+	font-size: 16px;
+}
+
 .input-container {
 	background-color: cornsilk;
 	padding: 10px;
