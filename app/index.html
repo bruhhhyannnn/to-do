@@ -55,6 +55,8 @@
                 }
             }
 
+            checkLocalStorage();
+
             function checkLocalStorage() {
                 const emptyTask = document.querySelector(".empty-task");
                 if (localStorage.length == 0 || localStorage.length == 1) {
@@ -78,6 +80,7 @@
                 const taskId = "task-" + generateTimestampId();
                 createTaskContainer(taskId, inputValue);
                 addTaskToStorage(taskId, inputValue);
+                checkLocalStorage();
             }
 
             function createTaskContainer(taskId, inputValue) {
@@ -117,7 +120,8 @@
                 const taskElement = document.getElementById(taskInputId).parentElement.parentElement;
                 taskElement.remove();
 
-                removeTaskToStorage(taskInputId)
+                removeTaskToStorage(taskInputId);
+                checkLocalStorage();
             }
 
             function addTaskToStorage(taskInputKey, inputValue) {
