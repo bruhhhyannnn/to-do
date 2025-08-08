@@ -55,6 +55,18 @@
                 }
             }
 
+            function checkLocalStorage() {
+                const emptyTask = document.querySelector(".empty-task");
+                if (localStorage.length == 0 || localStorage.length == 1) {
+                    const key = localStorage.key(0);
+                    if (localStorage.length == 0 || !(key.startsWith("task-"))) {
+                        emptyTask.style.display = "block";
+                        return;
+                    }
+                }
+                emptyTask.style.display = "none";
+            }
+
             function addTask() {
                 const inputValue = document.getElementById("inputTask").value;
                 if (inputValue.length == 0) {
